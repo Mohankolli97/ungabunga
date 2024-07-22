@@ -1,3 +1,15 @@
+function joinChat() {
+    const usernameInput = document.getElementById('username-input');
+    const username = usernameInput.value.trim();
+    
+    if (username) {
+        document.getElementById('landing-page').style.display = 'none';
+        document.getElementById('chat-container').style.display = 'block';
+    } else {
+        alert('Please enter your name before joining the chat.');
+    }
+}
+
 const chatBox = document.getElementById('chat-box');
 
 function sendMessage() {
@@ -15,7 +27,7 @@ function sendMessage() {
 
 function uploadPhoto(event) {
     const file = event.target.files[0];
-    if (file && file.type.startsWith('image')) {
+    if (file && file.type.startsWith('image/')) {
         const reader = new FileReader();
         reader.onload = function(e) {
             const img = document.createElement('img');
