@@ -1,53 +1,25 @@
-body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #f0f0f0;
-}
-
-#landing-page, #chat-container {
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 400px;
-    max-width: 100%;
-    padding: 20px;
-    text-align: center;
-}
-
-#username-input, #message-input {
-    width: calc(100% - 40px);
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-bottom: 20px;
-}
-
-button {
-    padding: 10px;
-    border: none;
-    background-color: #007bff;
-    color: #fff;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-bottom: 20px;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-
-#photo-upload {
-    margin-top: 10px;
-}
-
-#chat-box {
-    border: 1px solid #ccc;
-    padding: 10px;
-    height: 300px;
-    overflow-y: auto;
-    margin-bottom: 10px;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unga Bunga Chat Forum</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="landing-page">
+        <h1>Unga Bunga</h1>
+        <div style="height: 4in;"></div>
+        <input type="text" id="username-input" placeholder="Enter your name">
+        <div style="height: 4in;"></div>
+        <button onclick="joinChat()">Vachesa</button>
+    </div>
+    <div id="chat-container" style="display: none;">
+        <div id="chat-box"></div>
+        <input type="text" id="message-input" placeholder="Type your message here...">
+        <button onclick="sendMessage()">Send</button>
+        <input type="file" id="photo-upload" accept="image/*" onchange="uploadPhoto(event)">
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
