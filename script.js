@@ -1,10 +1,17 @@
+let username;
+
 function joinChat() {
     const usernameInput = document.getElementById('username-input');
-    const username = usernameInput.value.trim();
+    username = usernameInput.value.trim();
     
     if (username) {
         document.getElementById('landing-page').style.display = 'none';
         document.getElementById('chat-container').style.display = 'block';
+        
+        const joinMessage = document.createElement('div');
+        joinMessage.textContent = `${username} vachesadu`;
+        chatBox.appendChild(joinMessage);
+        chatBox.scrollTop = chatBox.scrollHeight;
     } else {
         alert('Please enter your name before joining the chat.');
     }
@@ -18,7 +25,7 @@ function sendMessage() {
     
     if (message) {
         const messageElement = document.createElement('div');
-        messageElement.textContent = message;
+        messageElement.textContent = `${username}: ${message}`;
         chatBox.appendChild(messageElement);
         messageInput.value = '';
         chatBox.scrollTop = chatBox.scrollHeight;
